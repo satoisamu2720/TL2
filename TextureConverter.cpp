@@ -12,7 +12,7 @@ void TextureConverter::LoadWICTextureFromFile(const std::string& filePath)
 {
 	std::wstring wfilePath = ConvertMultiByteStringToWideSttring(filePath);
 
-	//2
+	//2 
 
 }
 
