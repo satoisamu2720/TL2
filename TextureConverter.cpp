@@ -1,5 +1,6 @@
 #include "TextureConverter.h"
-#include <Windows.h>
+#include <cassert>
+using namespace DirectX;
 
 void TextureConverter::ConvertTextureWICToDDS(const std::string& filePath)
 {
@@ -12,8 +13,9 @@ void TextureConverter::LoadWICTextureFromFile(const std::string& filePath)
 {
 	std::wstring wfilePath = ConvertMultiByteStringToWideSttring(filePath);
 
-	//2 
+	HRESULT result = LoadFromWICFile(wfilePath.c_str(), WIC_FLAGS_NONE, &metadata_, scratchImage_);
 
+	assert(SUCCEEDED(result));
 }
 
 std::wstring TextureConverter::ConvertMultiByteStringToWideSttring(const std::string& mString)
