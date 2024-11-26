@@ -9,11 +9,19 @@ public:
 private:
 	void LoadWICTextureFromFile(const std::string& filePath);
 
-	static std::wstring ConvertMultiByteStringToWideSttring(const std::string& mString);
+	void SeparateFilePath(const std::wstring& filePath);
+
+	static std::wstring ConvertMultiByteStringToWideString(const std::string& mString);
 
 	DirectX::TexMetadata metadata_;
 
 	DirectX::ScratchImage scratchImage_;
+private:
+	std::wstring directoryPath;
+
+	std::wstring fileName;
+
+	std::wstring fileExt;
 
 };
 
