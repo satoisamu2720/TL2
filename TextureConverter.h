@@ -11,6 +11,8 @@ private:
 
 	void SeparateFilePath(const std::wstring& filePath);
 
+	void SaveDDSTextureToFile();
+
 	static std::wstring ConvertMultiByteStringToWideString(const std::string& mString);
 
 	DirectX::TexMetadata metadata_;
